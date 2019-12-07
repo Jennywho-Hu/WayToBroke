@@ -1,4 +1,5 @@
 import axios from "axios";
+import * as actionTypes from "./actionTypes";
 
 export const getEvent = productId => {
   return dispatch => {
@@ -7,7 +8,7 @@ export const getEvent = productId => {
       .then(res => {
         const data = res.data.productList[productId];
         const action = {
-          type: "change_list",
+          type: actionTypes.CHANGE_LIST,
           data: data
         };
         dispatch(action);
@@ -17,5 +18,5 @@ export const getEvent = productId => {
 };
 
 export const disableEventclick = () => ({
-  type: "disable_Event_click"
+  type: actionTypes.DISABLE_EVENT_CLICK
 });
