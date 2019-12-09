@@ -1,45 +1,40 @@
-{    
-    "success":true,
-        "productList": [
-            {
-              "id": 0,
-              "eventName": "Airpods Pro",
-              "eventImg":
-                "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MWP22?w'id'=1144&hei=1144&fmt=jpeg&qlt=80&op_usm=0.5%2C0.5&.v=1572990352299",
-              "eventDesc": "This is a bfiasasf",
-              "money": 50
-            },
-            {
-              "id": 1,
-              "eventName": "iPad Pro",
-              "eventImg":
-                "//cdn.pocket-lint.com/r/s/970x/assets/images/141253-tablets-review-ipad-pro-10-5-review-photos-image1-x4tc2men6o.jpg",
-              "eventDesc": "This is a bfiasasf",
-              "money": 500
-            },
-            {
-              "id": 2,
-              "eventName": "Pest Control",
-              "eventImg": "https://blog.bbxworld.com/hubfs/united-1.png",
-              "eventDesc": "This is a bfiasasf",
-              "money": 50
-            },
-            {
-              "id": 3,
-              "eventName": "Part-time job salary",
-              "eventImg":
-                "https://s3.amazonaws.com/fjwp/blog/wp-content/uploads/2018/10/31085858/part-time-353x177.jpg",
-              "eventDesc": "This is a bfiasasf",
-              "money": 100
-            },
-            {
-              "id": 4,
-              "eventName": "Side Project",
-              "eventImg":
-                "https://makermag.com/wp-content/uploads/2019/03/s'id'e-project-760x507.jpg",
-              "eventDesc": "This is a bfiasasf",
-              "money": 30
-            }
-          ]
-    
+{
+  "success": true,
+  "productList": [
+    {
+      "id": 0,
+      "eventName": "Airpods Pro",
+      "eventImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MWP22?w'id'=1144&hei=1144&fmt=jpeg&qlt=80&op_usm=0.5%2C0.5&.v=1572990352299",
+      "eventDesc": "This is a bfiasasf",
+      "money": 50
+    },
+    {
+      "id": 1,
+      "eventName": "iPad Pro",
+      "eventImg": "//cdn.pocket-lint.com/r/s/970x/assets/images/141253-tablets-review-ipad-pro-10-5-review-photos-image1-x4tc2men6o.jpg",
+      "eventDesc": "This is a bfiasasf",
+      "money": 500
+    },
+    {
+      "id": 2,
+      "eventName": "Pest Control",
+      "eventImg": "https://blog.bbxworld.com/hubfs/united-1.png",
+      "eventDesc": "This is a bfiasasf",
+      "money": 50
+    },
+    {
+      "id": 3,
+      "eventName": "Part-time job salary",
+      "eventImg": "https://s3.amazonaws.com/fjwp/blog/wp-content/uploads/2018/10/31085858/part-time-353x177.jpg",
+      "eventDesc": "This is a bfiasasf",
+      "money": 100
+    },
+    {
+      "id": 4,
+      "eventName": "Side Project",
+      "eventImg": "https://makermag.com/wp-content/uploads/2019/03/s'id'e-project-760x507.jpg",
+      "eventDesc": "This is a bfiasasf",
+      "money": 30
+    }
+  ]
 }

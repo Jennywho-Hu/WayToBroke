@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "character": {
+    "name": "Jenny",
+    "money": "100",
+    "avatarImg": "https://cdn4.iconfinder.com/data/icons/game-of-thrones-4/64/game_of_thrones_game_thrones_series_character_avatar_dragon-512.png"
+  },
+  "package": [
+    {
+      "id": 0,
+      "eventName": "You are a poor kid. Born with nothing",
+      "eventImg": "",
+      "eventDesc": "",
+      "money": ""
+    },
+    {
+      "id": 1,
+      "eventName": "Airpods Pro",
+      "eventImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MWP22?w'id'=1144&hei=1144&fmt=jpeg&qlt=80&op_usm=0.5%2C0.5&.v=1572990352299",
+      "eventDesc": "This is a bfiasasf",
+      "money": 50
+    }
+  ]
+}
