@@ -3,7 +3,9 @@ import * as actionTypes from "./actionTypes";
 
 const defaultState = fromJS({
   eventList: [],
-  flag: true
+  flag: true,
+  character: {},
+  package: {}
 });
 export default (state = defaultState, action) => {
   switch (action.type) {
@@ -11,6 +13,11 @@ export default (state = defaultState, action) => {
       return state.set("eventList", action.data);
     case actionTypes.DISABLE_EVENT_CLICK:
       return state.set("flag", false);
+    case actionTypes.INIT_CHARACTER:
+      return state.merge({
+        character: action.character,
+        package: action.package
+      });
     default:
       return state;
   }
