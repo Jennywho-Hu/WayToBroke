@@ -7,10 +7,10 @@ export const getCharactor = () => {
       .get("./api/Character.json")
       .then(res => {
         const data = res.data;
-
         const action = {
           type: actionTypes.INIT_CHARACTER,
           character: data.character,
+          money: data.money,
           package: data.package
         };
         dispatch(action);
@@ -41,5 +41,10 @@ export const disableEventclick = () => ({
 
 export const addNewEvent = newEvent => ({
   type: actionTypes.ADD_EVENT,
+  newEvent
+});
+
+export const calcualteMoney = newEvent => ({
+  type: actionTypes.CALCULATE_MONEY,
   newEvent
 });

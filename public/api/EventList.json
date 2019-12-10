@@ -6,7 +6,7 @@
       "eventName": "Airpods Pro",
       "eventImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MWP22?w'id'=1144&hei=1144&fmt=jpeg&qlt=80&op_usm=0.5%2C0.5&.v=1572990352299",
       "eventDesc": "This is a bfiasasf",
-      "balance": "spend",
+      "balance": 0,
       "money": 50
     },
     {
@@ -23,14 +23,14 @@
       "eventImg": "https://blog.bbxworld.com/hubfs/united-1.png",
       "eventDesc": "This is a bfiasasf",
       "balance": 0,
-      "money": 50
+      "money": 60
     },
     {
       "id": 3,
       "eventName": "Part-time job salary",
       "eventImg": "https://s3.amazonaws.com/fjwp/blog/wp-content/uploads/2018/10/31085858/part-time-353x177.jpg",
       "eventDesc": "This is a bfiasasf",
-      "balance": 0,
+      "balance": 1,
       "money": 100
     },
     {
@@ -38,7 +38,7 @@
       "eventName": "Side Project",
       "eventImg": "https://makermag.com/wp-content/uploads/2019/03/s'id'e-project-760x507.jpg",
       "eventDesc": "This is a bfiasasf",
-      "balance": "1",
+      "balance": 1,
       "money": 30
     }
   ]

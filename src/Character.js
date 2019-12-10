@@ -26,12 +26,12 @@ class Character extends Component {
             Money:
           </Card.Text>
           <Card.Text style={{ display: "inline" }}>
-            ${this.props.character.money}
+            ${this.props.money}
           </Card.Text>
           <Card.Text>Bag:</Card.Text>
           {this.props.package.length ? (
-            this.props.package.map(item => {
-              return <Card.Text key={item.id}>{item.eventName}</Card.Text>;
+            this.props.package.map((item, index) => {
+              return <Card.Text key={index}>{item.eventName}</Card.Text>;
             })
           ) : (
             <Card.Text>You're a poo kid. Born with nothing</Card.Text>
@@ -48,6 +48,7 @@ class Character extends Component {
 const mapStateToProps = state => {
   return {
     character: state.get("character"),
+    money: state.get("money"),
     package: Array.from(state.get("package"))
   };
 };

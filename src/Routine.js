@@ -5,7 +5,6 @@ import Image from "react-bootstrap/Image";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import * as actionCreators from "./store/actionCreators";
 import { connect } from "react-redux";
-import Modal from "react-bootstrap/Modal";
 
 class Routine extends Component {
   constructor(props) {
@@ -85,9 +84,11 @@ class Routine extends Component {
 const mapStateToProps = state => {
   return {
     flag: state.get("flag"),
-    eventList: state.get("eventList")
+    eventList: state.get("eventList"),
+    show: state.get("show")
   };
 };
+
 const mapDispatchToProps = dispatch => {
   return {
     handleClick() {
@@ -97,6 +98,7 @@ const mapDispatchToProps = dispatch => {
     },
     handleAccept(newEvent) {
       dispatch(actionCreators.addNewEvent(newEvent));
+      dispatch(actionCreators.calcualteMoney(newEvent));
     }
   };
 };

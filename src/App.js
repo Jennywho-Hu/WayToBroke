@@ -6,7 +6,7 @@ import Character from "./Character";
 import Routine from "./Routine";
 import { Provider } from "react-redux";
 import store from "./store";
-
+import Modal from "react-bootstrap/Modal";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +24,14 @@ class App extends Component {
               <Routine />
             </Col>
           </Row>
+          <Modal size="sm" aria-labelledby="example-modal-sizes-title-sm">
+            <Modal.Header closeButton>
+              <Modal.Title id="example-modal-sizes-title-sm">
+                Small Modal
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>...</Modal.Body>
+          </Modal>
         </Container>
       </Provider>
     );
