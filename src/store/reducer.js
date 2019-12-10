@@ -5,7 +5,7 @@ const defaultState = fromJS({
   eventList: [],
   flag: true,
   character: {},
-  package: {}
+  package: []
 });
 export default (state = defaultState, action) => {
   switch (action.type) {
@@ -18,6 +18,10 @@ export default (state = defaultState, action) => {
         character: action.character,
         package: action.package
       });
+    case actionTypes.ADD_EVENT:
+      const newState = JSON.parse(JSON.stringify(state));
+      newState.package.push(action.newEvent);
+      return state.set("package", newState.package);
     default:
       return state;
   }

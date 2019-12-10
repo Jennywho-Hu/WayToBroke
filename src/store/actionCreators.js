@@ -38,3 +38,8 @@ export const getEvent = productId => {
 export const disableEventclick = () => ({
   type: actionTypes.DISABLE_EVENT_CLICK
 });
+
+export const addNewEvent = newEvent => ({
+  type: actionTypes.ADD_EVENT,
+  newEvent
+});

@@ -3,18 +3,15 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
-import store from "./store";
 import * as actionCreators from "./store/actionCreators";
 import { connect } from "react-redux";
+import Modal from "react-bootstrap/Modal";
 
 class Routine extends Component {
   constructor(props) {
     super(props);
     this.handleReject = this.handleReject.bind(this);
     this.handleAccept = this.handleAccept.bind(this);
-    this.handleStoreChange = this.handleStoreChange.bind(this);
-    this.state = store.getState();
-    store.subscribe(this.handleStoreChange);
   }
 
   render() {
@@ -63,7 +60,11 @@ class Routine extends Component {
               >
                 Reject
               </Button>
-              <Button variant="success" size="lg" onClick={this.handleAccept}>
+              <Button
+                variant="success"
+                size="lg"
+                onClick={() => this.props.handleAccept(this.props.eventList)}
+              >
                 Accept
               </Button>
             </ButtonToolbar>
@@ -76,11 +77,8 @@ class Routine extends Component {
   handleReject() {
     console.log("reject");
   }
-  handleAccept() {
-    console.log("accept");
-  }
-  handleStoreChange() {
-    this.setState(store.getState());
+  handleAccept(newEvent) {
+    this.props.handleAccept(newEvent);
   }
 }
 
@@ -97,8 +95,8 @@ const mapDispatchToProps = dispatch => {
       dispatch(actionCreators.getEvent(productId));
       dispatch(actionCreators.disableEventclick());
     },
-    handleStoreChange() {
-      dispatch();
+    handleAccept(newEvent) {
+      dispatch(actionCreators.addNewEvent(newEvent));
     }
   };
 };

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
-import * as actionCreators from "./store/actionCreators";
 import { connect } from "react-redux";
+import * as actionCreators from "./store/actionCreators";
 
 class Character extends Component {
   render() {
@@ -29,15 +29,19 @@ class Character extends Component {
             ${this.props.character.money}
           </Card.Text>
           <Card.Text>Bag:</Card.Text>
-          {this.props.package.map(item => {
-            return <Card.Text key={item.id}>{item.eventName}</Card.Text>;
-          })}
+          {this.props.package.length ? (
+            this.props.package.map(item => {
+              return <Card.Text key={item.id}>{item.eventName}</Card.Text>;
+            })
+          ) : (
+            <Card.Text>You're a poo kid. Born with nothing</Card.Text>
+          )}
         </Card.Body>
       </Card>
     );
   }
   componentDidMount() {
-    this.props.initCharacterInfo();
+    this.props.initCharacter();
   }
 }
 
@@ -47,11 +51,13 @@ const mapStateToProps = state => {
     package: Array.from(state.get("package"))
   };
 };
+
 const mapDispatchToProps = dispatch => {
   return {
-    initCharacterInfo() {
+    initCharacter() {
       dispatch(actionCreators.getCharactor());
     }
   };
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(Character);
