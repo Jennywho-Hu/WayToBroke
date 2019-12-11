@@ -6,7 +6,7 @@ import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import * as actionCreators from "./store/actionCreators";
 import { connect } from "react-redux";
 
-class Routine extends Component {
+class Things extends Component {
   constructor(props) {
     super(props);
     this.handleReject = this.handleReject.bind(this);
@@ -32,7 +32,7 @@ class Routine extends Component {
           <Card.Body>
             <Image
               variant="top"
-              src={this.props.stuffList.eventImg}
+              src={this.props.stuffList.stuffImg}
               style={{
                 width: "auto",
                 height: "300px",
@@ -43,7 +43,7 @@ class Routine extends Component {
               bg="light"
             />
             <Card.Title>{this.props.stuffList.eventName}</Card.Title>
-            <Card.Text text="dark">{this.props.stuffList.eventDesc}</Card.Text>
+            <Card.Text text="warning">{this.props.stuffList.money}</Card.Text>
             <ButtonToolbar
               style={{
                 margin: "0 auto",
@@ -83,9 +83,9 @@ class Routine extends Component {
 
 const mapStateToProps = state => {
   return {
-    flag: state.getIn(["things", "flag"]),
-    stuffList: state.getIn(["things", "stuffList"]),
-    show: state.getIn(["things", "show"])
+    flag: state.get("flag"),
+    stuffList: state.get("stuffList"),
+    show: state.get("show")
   };
 };
 
@@ -96,10 +96,10 @@ const mapDispatchToProps = dispatch => {
       dispatch(actionCreators.getStuff(stuffId));
       dispatch(actionCreators.disableEventclick());
     },
-    handleAccept(newEvent) {
-      dispatch(actionCreators.addNewEvent(newEvent));
-      dispatch(actionCreators.calcualteMoney(newEvent));
+    handleAccept(newStuff) {
+      dispatch(actionCreators.addNewStuff(newStuff));
+      dispatch(actionCreators.calcualteMoney(newStuff));
     }
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Routine);
+export default connect(mapStateToProps, mapDispatchToProps)(Things);

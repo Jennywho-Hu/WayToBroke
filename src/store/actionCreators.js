@@ -1,6 +1,24 @@
 import axios from "axios";
 import * as actionTypes from "./actionTypes";
 
+export const getCharactor = () => {
+  return dispatch => {
+    axios
+      .get("./api/character.json")
+      .then(res => {
+        const data = res.data;
+        const action = {
+          type: actionTypes.INIT_CHARACTER,
+          character: data.character,
+          money: data.money,
+          package: data.package
+        };
+        dispatch(action);
+      })
+      .catch(err => console.log(err));
+  };
+};
+
 export const getStuff = stuffId => {
   return dispatch => {
     axios
@@ -21,9 +39,9 @@ export const disableEventclick = () => ({
   type: actionTypes.DISABLE_EVENT_CLICK
 });
 
-export const addNewEvent = newEvent => ({
-  type: actionTypes.ADD_EVENT,
-  newEvent
+export const addNewStuff = newStuff => ({
+  type: actionTypes.ADD_STUFF,
+  newStuff
 });
 
 export const calcualteMoney = newEvent => ({

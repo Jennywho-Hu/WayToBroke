@@ -4,35 +4,34 @@
     {
       "id": 1,
       "eventName": "Airpods Pro",
-      "eventImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MWP22?w'id'=1144&hei=1144&fmt=jpeg&qlt=80&op_usm=0.5%2C0.5&.v=1572990352299",
-      "eventDesc": "This is a bfiasasf",
+      "stuffImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MWP22?w'id'=1144&hei=1144&fmt=jpeg&qlt=80&op_usm=0.5%2C0.5&.v=1572990352299",
+      "stuffDesc": "This is a bfiasasf",
       "balance": 0,
-      "money": 200,
-      "category": "Income"
+      "money": 200
     },
     {
       "id": 2,
       "eventName": "iPad Pro",
-      "eventImg": "//cdn.pocket-lint.com/r/s/970x/assets/images/141253-tablets-review-ipad-pro-10-5-review-photos-image1-x4tc2men6o.jpg",
-      "eventDesc": "This is a bfiasasf",
+      "stuffImg": "//cdn.pocket-lint.com/r/s/970x/assets/images/141253-tablets-review-ipad-pro-10-5-review-photos-image1-x4tc2men6o.jpg",
+      "stuffDesc": "This is a bfiasasf",
       "balance": 0,
       "money": 750
     },
     {
       "id": 3,
       "eventName": "Apple Pencil",
-      "eventImg": "https://blog.bbxworld.com/hubfs/united-1.png",
-      "eventDesc": "This is a bfiasasf",
+      "stuffImg": "https://www.dhresource.com/webp/m/0x0s/f2-albu-g9-M01-54-B4-rBVaVVyGGW2AdBGmAADJHColZ_M528.jpg/apple-pencil-new-stylus-capacitance-touch.jpg",
+      "stuffDesc": "This is a bfiasasf",
       "balance": 0,
       "money": 100
     },
     {
       "id": 4,
       "eventName": "iMac",
-      "eventImg": "https://blog.bbxworld.com/hubfs/united-1.png",
-      "eventDesc": "This is a bfiasasf",
+      "stuffImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/imacpro-27-retina-selection-hero?wid=904&hei=840&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1511982294002",
+      "stuffDesc": "This is a bfiasasf",
       "balance": 0,
-      "money": 800
+      "money": 7200
     }
   ]
 }

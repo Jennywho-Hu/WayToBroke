@@ -8,6 +8,15 @@ class Character extends Component {
   render() {
     return (
       <Card bg="dark" text="white">
+        <Card.Title
+          style={{
+            marginLeft: "40%",
+            marginTop: "10%",
+            fontSize: "20px"
+          }}
+        >
+          Day: {this.props.date}
+        </Card.Title>
         <Image
           variant="top"
           src={this.props.character.avatarImg}
@@ -21,12 +30,12 @@ class Character extends Component {
           bg="light"
         />
         <Card.Body>
-          <Card.Title>{this.props.character.name}</Card.Title>
-          <Card.Text style={{ display: "inline" }} text="primary">
-            Money:
-          </Card.Text>
-          <Card.Text style={{ display: "inline" }}>
-            ${this.props.money}
+          <Card.Title style={{ color: "#28a745", fontSize: "30px" }}>
+            {this.props.character.name}
+          </Card.Title>
+          <Card.Text style={{ display: "inline" }}>Money: $</Card.Text>
+          <Card.Text style={{ display: "inline", color: "yellow" }}>
+            {this.props.money}
           </Card.Text>
           <Card.Text>Bag:</Card.Text>
           {this.props.package.length ? (
@@ -47,9 +56,10 @@ class Character extends Component {
 
 const mapStateToProps = state => {
   return {
-    character: state.getIn(["character", "character"]),
-    money: state.getIn(["character", "money"]),
-    package: Array.from(state.getIn(["character", "package"]))
+    character: state.get("character"),
+    money: state.get("money"),
+    package: Array.from(state.get("package")),
+    date: state.get("date")
   };
 };
 
