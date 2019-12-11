@@ -32,7 +32,7 @@ class Routine extends Component {
           <Card.Body>
             <Image
               variant="top"
-              src={this.props.eventList.eventImg}
+              src={this.props.stuffList.eventImg}
               style={{
                 width: "auto",
                 height: "300px",
@@ -42,8 +42,8 @@ class Routine extends Component {
               }}
               bg="light"
             />
-            <Card.Title>{this.props.eventList.eventName}</Card.Title>
-            <Card.Text text="dark">{this.props.eventList.eventDesc}</Card.Text>
+            <Card.Title>{this.props.stuffList.eventName}</Card.Title>
+            <Card.Text text="dark">{this.props.stuffList.eventDesc}</Card.Text>
             <ButtonToolbar
               style={{
                 margin: "0 auto",
@@ -62,7 +62,7 @@ class Routine extends Component {
               <Button
                 variant="success"
                 size="lg"
-                onClick={() => this.props.handleAccept(this.props.eventList)}
+                onClick={() => this.props.handleAccept(this.props.stuffList)}
               >
                 Accept
               </Button>
@@ -83,17 +83,17 @@ class Routine extends Component {
 
 const mapStateToProps = state => {
   return {
-    flag: state.get("flag"),
-    eventList: state.get("eventList"),
-    show: state.get("show")
+    flag: state.getIn(["things", "flag"]),
+    stuffList: state.getIn(["things", "stuffList"]),
+    show: state.getIn(["things", "show"])
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     handleClick() {
-      const productId = Math.floor(Math.random() * Math.floor(4));
-      dispatch(actionCreators.getEvent(productId));
+      const stuffId = Math.floor(Math.random() * Math.floor(4));
+      dispatch(actionCreators.getStuff(stuffId));
       dispatch(actionCreators.disableEventclick());
     },
     handleAccept(newEvent) {

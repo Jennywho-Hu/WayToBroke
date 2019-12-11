@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Character from "./Character";
-import Routine from "./Routine";
+import Character from "./character/Character";
+import Routine from "./things/Routine";
 import { Provider } from "react-redux";
 import store from "./store";
 import Modal from "react-bootstrap/Modal";
+
 class App extends Component {
   constructor(props) {
     super(props);

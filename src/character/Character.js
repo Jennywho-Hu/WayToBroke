@@ -34,7 +34,7 @@ class Character extends Component {
               return <Card.Text key={index}>{item.eventName}</Card.Text>;
             })
           ) : (
-            <Card.Text>You're a poo kid. Born with nothing</Card.Text>
+            <Card.Text>You're a poor kid. Born with nothing</Card.Text>
           )}
         </Card.Body>
       </Card>
@@ -47,9 +47,9 @@ class Character extends Component {
 
 const mapStateToProps = state => {
   return {
-    character: state.get("character"),
-    money: state.get("money"),
-    package: Array.from(state.get("package"))
+    character: state.getIn(["character", "character"]),
+    money: state.getIn(["character", "money"]),
+    package: Array.from(state.getIn(["character", "package"]))
   };
 };
 

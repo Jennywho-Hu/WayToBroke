@@ -1,30 +1,12 @@
 import axios from "axios";
 import * as actionTypes from "./actionTypes";
 
-export const getCharactor = () => {
+export const getStuff = stuffId => {
   return dispatch => {
     axios
-      .get("./api/Character.json")
+      .get("./api/stuffList.json")
       .then(res => {
-        const data = res.data;
-        const action = {
-          type: actionTypes.INIT_CHARACTER,
-          character: data.character,
-          money: data.money,
-          package: data.package
-        };
-        dispatch(action);
-      })
-      .catch(err => console.log(err));
-  };
-};
-
-export const getEvent = productId => {
-  return dispatch => {
-    axios
-      .get("./api/EventList.json")
-      .then(res => {
-        const data = res.data.productList[productId];
+        const data = res.data.stuffList[stuffId];
         const action = {
           type: actionTypes.CHANGE_LIST,
           data: data
