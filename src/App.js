@@ -6,23 +6,48 @@ import Character from "./Character";
 import Things from "./Things";
 import { Provider } from "react-redux";
 import store from "./store";
+import Name from "./Name";
+import * as actionCreators from "./store/actionCreators";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: false,
+      inputValue: ""
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
   render() {
     return (
       <Provider store={store}>
-        <Container style={{ height: "100%" }}>
-          <Row>
-            <Col>
-              <Character />
-            </Col>
-            <Col xs={8}>
-              <Things />
-            </Col>
-          </Row>
-        </Container>
+        {this.state.name ? (
+          <Container>
+            <Row>
+              <Col>
+                <Character />
+              </Col>
+              <Col xs={8}>
+                <Things />
+              </Col>
+            </Row>
+          </Container>
+        ) : (
+          <Name
+            handleSubmit={this.handleSubmit}
+            handleChange={this.handleChange}
+          ></Name>
+        )}
       </Provider>
     );
+  }
+  handleChange(e) {
+    this.setState({ inputValue: e.target.value });
+  }
+  handleSubmit() {
+    store.dispatch(actionCreators.changeName(this.state.inputValue));
+    this.setState({ name: true });
   }
 }
 

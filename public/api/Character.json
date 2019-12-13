@@ -1,9 +1,6 @@
 {
   "success": true,
-  "character": {
-    "name": "Jenny",
-    "avatarImg": "https://cdn4.iconfinder.com/data/icons/game-of-thrones-4/64/game_of_thrones_game_thrones_series_character_avatar_dragon-512.png"
-  },
+  "avatarImg": "https://cdn4.iconfinder.com/data/icons/game-of-thrones-4/64/game_of_thrones_game_thrones_series_character_avatar_dragon-512.png",
   "money": 100,
   "package": []
 }

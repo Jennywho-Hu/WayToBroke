@@ -9,7 +9,7 @@ export const getCharactor = () => {
         const data = res.data;
         const action = {
           type: actionTypes.INIT_CHARACTER,
-          character: data.character,
+          avatarImg: data.avatarImg,
           money: data.money,
           package: data.package
         };
@@ -55,4 +55,9 @@ export const checkMoney = () => ({
 
 export const restartGameData = () => ({
   type: actionTypes.RESTART
+});
+
+export const changeName = inputName => ({
+  type: actionTypes.CHANGE_NAME,
+  inputName
 });

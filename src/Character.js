@@ -22,7 +22,7 @@ class Character extends Component {
         </Card.Title>
         <Image
           variant="top"
-          src={this.props.character.avatarImg}
+          src={this.props.avatarImg}
           roundedCircle
           style={{
             width: "60%",
@@ -34,7 +34,7 @@ class Character extends Component {
         />
         <Card.Body>
           <Card.Title style={{ color: "#28a745", fontSize: "30px" }}>
-            {this.props.character.name}
+            {this.props.name}
           </Card.Title>
           <Card.Text style={{ display: "inline" }}>Money: $</Card.Text>
           <Card.Text style={{ display: "inline", color: "yellow" }}>
@@ -70,11 +70,12 @@ class Character extends Component {
 
 const mapStateToProps = state => {
   return {
-    character: state.get("character"),
+    avatarImg: state.get("avatarImg"),
     money: state.get("money"),
     package: Array.from(state.get("package")),
     date: state.get("date"),
-    broke: state.get("broke")
+    broke: state.get("broke"),
+    name: state.get("name")
   };
 };
 

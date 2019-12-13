@@ -2,7 +2,8 @@ import { fromJS } from "immutable";
 import * as actionTypes from "./actionTypes";
 
 const defaultState = fromJS({
-  character: {},
+  name: "",
+  avatarImg: "",
   money: "",
   package: [],
   stuffList: [],
@@ -14,7 +15,7 @@ export default (state = defaultState, action) => {
   switch (action.type) {
     case actionTypes.INIT_CHARACTER:
       return state.merge({
-        character: action.character,
+        avatarImg: action.avatarImg,
         money: action.money,
         package: action.package
       });
@@ -39,6 +40,9 @@ export default (state = defaultState, action) => {
       }
     case actionTypes.RESTART:
       return state.merge({ broke: false }, { flag: true });
+    case actionTypes.CHANGE_NAME:
+      console.log(state);
+      return state.set("name", action.inputName);
     default:
       return state;
   }
