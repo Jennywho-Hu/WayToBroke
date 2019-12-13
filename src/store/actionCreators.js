@@ -48,3 +48,11 @@ export const calcualteMoney = newEvent => ({
   type: actionTypes.CALCULATE_MONEY,
   newEvent
 });
+
+export const checkMoney = () => ({
+  type: actionTypes.CHECK_MONEY
+});
+
+export const restartGameData = () => ({
+  type: actionTypes.RESTART
+});

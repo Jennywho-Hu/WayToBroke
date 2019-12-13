@@ -16,26 +16,26 @@ class Things extends Component {
   render() {
     return (
       <Card bg="light" style={{ height: "100%" }}>
-        <Button
-          variant="primary"
-          size="lg"
-          onClick={this.props.handleClick}
-          text="white"
-        >
-          What gonna happen today
-        </Button>
         {this.props.flag ? (
-          <Card.Body>
-            <Card.Title>Get ready for today</Card.Title>
-          </Card.Body>
+          <Button
+            style={{ height: "100%" }}
+            variant="info"
+            size="lg"
+            onClick={this.props.handleClick}
+            text="white"
+          >
+            Click to See What gonna happen today
+          </Button>
         ) : (
           <Card.Body>
+            <Card.Title text="warning">Do you wanna accept this?</Card.Title>
+
             <Image
               variant="top"
               src={this.props.stuffList.stuffImg}
               style={{
                 width: "auto",
-                height: "300px",
+                height: "250px",
                 borderRadius: "5px",
                 display: "block",
                 margin: "0 auto"
@@ -97,6 +97,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(actionCreators.disableEventclick());
     },
     handleAccept(newStuff) {
+      dispatch(actionCreators.checkMoney());
       dispatch(actionCreators.addNewStuff(newStuff));
       dispatch(actionCreators.calcualteMoney(newStuff));
     }

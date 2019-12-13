@@ -6,13 +6,8 @@ import Character from "./Character";
 import Things from "./Things";
 import { Provider } from "react-redux";
 import store from "./store";
-import Modal from "react-bootstrap/Modal";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = store.getState();
-  }
   render() {
     return (
       <Provider store={store}>
@@ -25,14 +20,6 @@ class App extends Component {
               <Things />
             </Col>
           </Row>
-          <Modal size="sm" aria-labelledby="example-modal-sizes-title-sm">
-            <Modal.Header closeButton>
-              <Modal.Title id="example-modal-sizes-title-sm">
-                Small Modal
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>...</Modal.Body>
-          </Modal>
         </Container>
       </Provider>
     );

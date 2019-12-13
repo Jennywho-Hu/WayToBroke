@@ -7,7 +7,8 @@ const defaultState = fromJS({
   package: [],
   stuffList: [],
   flag: true,
-  date: 1
+  date: 1,
+  broke: false
 });
 export default (state = defaultState, action) => {
   switch (action.type) {
@@ -30,6 +31,14 @@ export default (state = defaultState, action) => {
         ? state.get("money") + action.newEvent.money
         : state.get("money") - action.newEvent.money;
       return state.set("money", newBalance);
+    case actionTypes.CHECK_MONEY:
+      if (state.get("money") <= 0) {
+        return state.set("broke", false);
+      } else {
+        return state.set("broke", true);
+      }
+    case actionTypes.RESTART:
+      return state.merge({ broke: false }, { flag: true });
     default:
       return state;
   }

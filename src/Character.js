@@ -3,6 +3,9 @@ import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import { connect } from "react-redux";
 import * as actionCreators from "./store/actionCreators";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 
 class Character extends Component {
   render() {
@@ -46,6 +49,17 @@ class Character extends Component {
             <Card.Text>You're a poor kid. Born with nothing</Card.Text>
           )}
         </Card.Body>
+        <Modal show={this.props.broke}>
+          <Alert variant="danger" style={{ marginBottom: "0px" }}>
+            <Alert.Heading>Aww yeah, you successfully broke!!!!</Alert.Heading>
+            You owe me ${Math.abs(this.props.money)}.
+          </Alert>
+          <Modal.Footer>
+            <Button variant="primary" onClick={this.props.restartGameData}>
+              Restart Game
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </Card>
     );
   }
@@ -59,7 +73,8 @@ const mapStateToProps = state => {
     character: state.get("character"),
     money: state.get("money"),
     package: Array.from(state.get("package")),
-    date: state.get("date")
+    date: state.get("date"),
+    broke: state.get("broke")
   };
 };
 
@@ -67,6 +82,10 @@ const mapDispatchToProps = dispatch => {
   return {
     initCharacter() {
       dispatch(actionCreators.getCharactor());
+    },
+    restartGameData() {
+      dispatch(actionCreators.getCharactor());
+      dispatch(actionCreators.restartGameData());
     }
   };
 };
